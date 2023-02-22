@@ -1,0 +1,25 @@
+.main-header {
+	position: fixed;
+}
+.navBar {
+	background-color: rgba(4, 20, 42, 0.937) !important;
+}
+
+.navActive {
+	color: "ffb700";
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.navLink {
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navLink:hover {
+	border-bottom: 3px solid #fff;
+}

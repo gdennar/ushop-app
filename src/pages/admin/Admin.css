@@ -1,0 +1,13 @@
+.admin {
+	display: flex;
+}
+
+.navbar {
+	width: 250px;
+	min-height: 90vh;
+}
+
+.adminContent {
+	width: calc(100vw - 250px);
+	padding: 1rem;
+}

@@ -1,0 +1,113 @@
+.main-content {
+	overflow-y: scroll;
+	margin-bottom: 20px;
+}
+.main-content::-webkit-scrollbar {
+	display: none;
+}
+
+.main-content {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.main-card {
+	width: 70%;
+	margin: auto;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.364) !important;
+	overflow: hidden;
+}
+
+.image-card {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.364) !important;
+}
+
+.card-header {
+	background-color: #ffb700;
+	padding: 16px;
+	text-align: center;
+}
+
+.card-header .text-header {
+	margin: 0;
+	font-size: 1.7rem;
+	color: #333;
+	font-weight: 500;
+}
+
+.card-body {
+	padding: 25px;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-group label {
+	display: block;
+	color: rgba(4, 20, 42, 0.937);
+	font-weight: bold;
+	margin-bottom: 1px;
+	text-align: start;
+	font-size: 1rem;
+}
+
+.form-control.txt,
+.form-group input[type="file"],
+.form-group select {
+	width: 100%;
+	padding: 8px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.form-control.img {
+	width: 95% !important;
+}
+
+.form-control.txt.img {
+	margin-top: 5px;
+}
+textarea {
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.btn {
+	padding: 12px 24px;
+	margin-left: 13px;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	background-color: #ffb700;
+	color: rgba(4, 20, 42, 0.937);
+	text-transform: uppercase;
+	transition: background-color 0.2s ease-in-out;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+.btn:hover {
+	background-color: #ccc;
+	color: #333;
+}
+
+.progress {
+	background-color: rgba(170, 170, 170, 0.451);
+	border: 1px solid transparent;
+	border-radius: 10px;
+	height: 20px;
+	margin-bottom: 10px;
+	width: 90%;
+}
+.progressBar {
+	background-color: rgba(4, 20, 42, 0.937);
+	border: 1px solid transparent;
+	border-radius: 10px;
+	color: #fff;
+	font-weight: 500;
+	padding: 0 1rem;
+	height: 20px;
+}

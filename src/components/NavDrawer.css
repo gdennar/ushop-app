@@ -1,0 +1,41 @@
+.sideNav-list {
+	height: 20px;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	margin-top: 2rem;
+}
+
+.sideNav-list:hover {
+	cursor: pointer;
+	transform: translateX(2%);
+	transition: 0.3s ease-in-out;
+	color: #ffb700;
+}
+
+.nav-link:active {
+	color: #ffb700;
+}
+.sideNav-list span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	color: #fff !important;
+}
+
+.nav-link {
+	text-decoration: none;
+}
+
+.icon {
+	flex: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	place-items: center;
+	margin: 0 auto;
+}
+
+.text {
+	flex: 90%;
+}
