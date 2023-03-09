@@ -5,3 +5,6 @@ export { default as Register } from "./auth/Register";
 export { default as Reset } from "./auth/Reset";
 export { default as Admin } from "./admin/Admin";
 export { default as ProductDetails } from "../components/product/ProductDetails";
+export { default as Cart } from "./cart/Cart";
+export { default as CheckoutDetails } from "./checkout/CheckoutDetails";
+export { default as Checkout } from "./checkout/Checkout";

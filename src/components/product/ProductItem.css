@@ -31,7 +31,7 @@
 }
 
 .prd-content p:nth-child(2) {
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	font-weight: 400;
 	padding: 0 !important;
 	margin: 0 0 20px 0 !important;
@@ -50,6 +50,11 @@
 	width: 100%;
 	background-color: #ffb700;
 	color: #fff;
+}
+
+.prd-content .button-prd:hover {
+	background-color: orangered;
+	font-weight: 700;
 }
 
 .list {

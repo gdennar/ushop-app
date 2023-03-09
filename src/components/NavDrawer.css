@@ -15,7 +15,7 @@
 .nav-link:active {
 	color: #ffb700;
 }
-.sideNav-list span {
+.nav-link span {
 	display: flex;
 	justify-content: center;
 	align-items: center;

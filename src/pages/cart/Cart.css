@@ -1,0 +1,86 @@
+.cart-table {
+	padding: 5px;
+	width: 100%;
+	overflow-x: auto;
+}
+.cart-table table {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 1rem;
+}
+.cart-table table thead {
+	border-top: 2px solid rgba(25, 79, 155, 0.937);
+	border-bottom: 2px solid rgba(25, 79, 155, 0.937);
+}
+
+th {
+	border: 1px solid #eee;
+}
+
+th,
+td {
+	vertical-align: top;
+	text-align: left;
+	padding: 8px;
+}
+
+th,
+td p {
+	margin-top: 0 !important;
+}
+
+.cart-icons > * {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+tr {
+	border-bottom: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+	background-color: #eee;
+}
+
+.cart-summary {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	margin-bottom: 7rem;
+}
+.cart-card {
+	padding: 1rem;
+}
+
+.cart-card .cart-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cart-card h3 {
+	color: rgba(255, 0, 0, 0.797);
+}
+
+button {
+	margin-top: 5px;
+}
+
+.cart-count {
+	display: flex;
+	align-items: center;
+}
+
+.cart-count > * {
+	margin-right: 0.5rem;
+}
+.cart-button {
+	border: 1px solid rgba(4, 20, 42, 0.937);
+}
+.cart-button > * {
+	margin-right: 1rem;
+}
+
+.cart-image {
+	width: 100px;
+}

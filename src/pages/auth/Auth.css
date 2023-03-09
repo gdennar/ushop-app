@@ -10,13 +10,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 0 5px rgba(16, 24, 40, 0.25);
+	box-shadow: 0 0 3px rgba(16, 24, 40, 0.25);
 	border-radius: 10px;
 	max-width: 50%;
 	padding: 0 50px;
 	z-index: 99;
 }
 
+.form-card h3 {
+	font-size: 2.5rem;
+	animation: slide-up 0.5s ease;
+}
 form {
 	text-align: center;
 }
@@ -33,6 +37,10 @@ form {
 	margin-bottom: 15px;
 }
 
+.login-img {
+	animation: slide-down 0.5s ease;
+}
+
 span {
 	font-weight: 500;
 	color: #ffb700;
@@ -45,4 +53,27 @@ span {
 .auth-page {
 	display: flex;
 	justify-content: space-between;
+}
+
+@keyframes slide-up {
+	0% {
+		transform: translateY(-5rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes slide-down {
+	0% {
+		transform: translateY(5rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.login-img {
+		display: none;
+	}
 }

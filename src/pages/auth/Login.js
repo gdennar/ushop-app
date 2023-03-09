@@ -10,13 +10,22 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader";
 import { auth } from "../../firebase/config";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { cartAction } from "../../store/CartSlice";
+import { useSelector } from "react-redux";
 
 function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
-
 	const navigate = useNavigate();
+
+	const prevUrl = useSelector((state) => state.cart.previousUrl);
+	const redirectUser = () => {
+		if (prevUrl.includes("cart")) {
+			return navigate("/cart");
+		}
+		navigate("/");
+	};
 
 	const provider = new GoogleAuthProvider();
 
@@ -29,7 +38,7 @@ function Login() {
 				if (user) {
 					setIsLoading(false);
 					toast.success("Logged In");
-					navigate("/");
+					redirectUser();
 				}
 			})
 			.catch((error) => {
@@ -47,7 +56,7 @@ function Login() {
 				const user = result.user;
 				setIsLoading(false);
 				toast.success("Logged In");
-				navigate("/");
+				redirectUser();
 			})
 			.catch((error) => {
 				setIsLoading(false);
@@ -64,7 +73,7 @@ function Login() {
 				</div>
 				<div className="form-card">
 					<form onSubmit={loginHandler}>
-						<h2 style={{ color: "orangered" }}>Login</h2>
+						<h3 style={{ color: "orangered" }}>Login</h3>
 						<div className="form-group">
 							<div className="input-field">
 								<TextField

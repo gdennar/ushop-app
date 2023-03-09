@@ -9,21 +9,28 @@ const useFetchCollection = (collectionName) => {
 
 	const getCollection = () => {
 		setisLoading(true);
-		try {
-			const docRef = collection(db, collectionName);
-			const q = query(docRef, orderBy("createdAT", "desc"));
+		const cachedData = sessionStorage.getItem("myCachedData");
+		if (!cachedData) {
+			try {
+				const docRef = collection(db, collectionName);
+				const q = query(docRef, orderBy("createdAT", "desc"));
 
-			onSnapshot(q, (querySnapshot) => {
-				const allData = querySnapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-				setData(allData);
+				onSnapshot(q, (querySnapshot) => {
+					const allData = querySnapshot.docs.map((doc) => ({
+						id: doc.id,
+						...doc.data(),
+					}));
+					setData(allData);
+					sessionStorage.setItem("myCachedData", JSON.stringify(allData));
+					setisLoading(false);
+				});
+			} catch (error) {
 				setisLoading(false);
-			});
-		} catch (error) {
+				toast.error(error.message);
+			}
+		} else {
+			setData(JSON.parse(cachedData));
 			setisLoading(false);
-			toast.error(error.message);
 		}
 	};
 

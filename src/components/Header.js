@@ -21,23 +21,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store/authSlice";
 import NavDrawer from "./NavDrawer";
 import { AdminLink } from "./adminRoute/AdminRoute";
+import { cartAction } from "../store/CartSlice";
 
 // const navStyle = ({ isActive }) =>
 // 	isActive ? `${classes.navActive}` : `${classes..navLink}`;
 
 function Header() {
 	const [displayUName, setDisplayUName] = useState("");
+	const [scrollPage, setScrollPage] = useState(false);
 
 	const theme = useTheme();
 	const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
 	const isUserLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+	const cartTotalQuantity = useSelector(
+		(state) => state.cart.cartTotalQuantity
+	);
 
 	const dispatch = useDispatch();
 
 	const navigate = useNavigate();
 
+	useEffect(() => {
+		dispatch(cartAction.calculateCartQuantity());
+	}, [dispatch]);
+
+	const fixNavBar = () => {
+		if (window.scrollY > 30) {
+			setScrollPage(true);
+		} else {
+			setScrollPage(false);
+		}
+	};
+	window.addEventListener("scroll", fixNavBar);
+
 	const logoutHandler = () => {
+		// localStorage.clear("myCachedData");
 		signOut(auth)
 			.then(() => {
 				toast.success("Logged out successfully");
@@ -74,7 +93,7 @@ function Header() {
 	});
 
 	return (
-		<section className="main-header">
+		<section className={scrollPage ? classes.headerFixed : null}>
 			<ToastContainer />
 			<AppBar position="static" className={classes.navBar}>
 				<Container maxWidth="xl">
@@ -132,9 +151,12 @@ function Header() {
 											<p>My Orders</p>
 										</NavLink>
 									)}
-									<NavLink to="" className={classes.navLink}>
+									<NavLink to="/cart" className={classes.navLink}>
 										<p>
 											<ShoppingCartIcon />
+											<span className={classes.cartQuantity}>
+												{cartTotalQuantity}
+											</span>
 										</p>
 									</NavLink>
 									{!isUserLoggedIn && (

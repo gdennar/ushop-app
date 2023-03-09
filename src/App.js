@@ -10,6 +10,9 @@ import {
 	Reset,
 	Admin,
 	ProductDetails,
+	Cart,
+	CheckoutDetails,
+	Checkout,
 } from "./pages";
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
 						}
 					/>
 					<Route path="/product-details/:id" element={<ProductDetails />} />
+					<Route path="/cart" element={<Cart />} />
+					<Route path="/checkout-details" element={<CheckoutDetails />} />
+					<Route path="/checkout" element={<Checkout />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>

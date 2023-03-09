@@ -1,5 +1,9 @@
-.main-header {
+.headerFixed {
+	width: 100%;
 	position: fixed;
+	top: 0;
+	transition: all 0.5s;
+	z-index: 9;
 }
 .navBar {
 	background-color: rgba(4, 20, 42, 0.937) !important;
@@ -20,6 +24,26 @@
 	color: #fff;
 }
 
+.cartQuantity {
+	position: absolute;
+	top: 5px;
+}
+
 .navLink:hover {
 	border-bottom: 3px solid #fff;
 }
+
+/* .active {
+	position: relative;
+	color: orangered;
+}
+
+.active::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+} */

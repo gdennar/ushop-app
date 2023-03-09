@@ -10,7 +10,7 @@
 	transform: translateY(-50%);
 }
 
-input[type="text"] {
+.search-input {
 	display: block;
 	font-size: 0.9rem;
 	padding: 0.5rem;
