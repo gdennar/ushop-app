@@ -13,6 +13,7 @@ const Cart = () => {
 		(state) => state.cart.cartTotalQuantity
 	);
 	const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+	console.log(cartTotalAmount);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();

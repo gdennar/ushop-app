@@ -1,0 +1,42 @@
+.checkout-product {
+	width: inherit;
+	max-width: inherit;
+	padding: 0 0.5rem;
+	border: 1px solid lightseagreen;
+	margin-bottom: 5px;
+}
+
+.checkout-product > * {
+	margin: 10px 0;
+}
+
+.checkout-product > p {
+	margin: 2px;
+}
+.checkout-card {
+	padding: 1rem;
+}
+
+.checkout-card > *,
+.checkout-text > * {
+	margin: 10px 0;
+}
+.checkout-card h3 {
+	font-weight: 400;
+}
+
+.checkout-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.checkout-text h3 {
+	color: orangered;
+	font-weight: 500;
+}
+
+.cart-item {
+	margin: 0;
+	font-weight: 400;
+}

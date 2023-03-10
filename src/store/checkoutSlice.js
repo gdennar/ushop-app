@@ -10,11 +10,11 @@ const checkoutSlice = createSlice({
 	initialState,
 	reducers: {
 		saveShippingAddress: (state, action) => {
-			// state.shippingAddress = action.payload;
+			state.shippingAddress = action.payload;
 			console.log(action.payload);
 		},
 		saveBillingAddress: (state, action) => {
-			// state.billingAddress = action.payload;
+			state.billingAddress = action.payload;
 			console.log(action.payload);
 		},
 	},
